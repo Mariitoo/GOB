@@ -87,24 +87,7 @@
 
     <script src="main.js"></script>
 
-    <?php
-// Valores de la lista
-$opciones = array('A.1 Presupuesto Global', 'A.1.1 Presupuesto de Ingresos Autorizado Global por Capitulo', 'A.1.2 Presupuesto de Egresos Autorizado Global por Capitulo','A.1.3 Presupuesto de Egresos por Secretaría Global','A.4 Asignación del Fondo Unico de Operación','A.4.1b Arqueo del Fondo Único de Operación','A.5 Rel. de Ctas. Bancarias, Inversiones, etc.');
-
-// Valor por defecto
-$valorDefecto = 'A.1 Presupuesto Global';
-
-// HTML de la lista desplegable
-echo '<select name="opciones">';
-foreach ($opciones as $opcion) {
-	if ($opcion == $valorDefecto) {
-		echo '<option value="' . $opcion . '" selected>' . $opcion . '</option>';
-	} else {
-		echo '<option value="' . $opcion . '">' . $opcion . '</option>';
-	}
-}
-echo '</select>';
-?>
+    
 </body>
 
 </html>

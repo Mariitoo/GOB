@@ -1,86 +1,150 @@
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <title>Sube tu documento</title>
     <link rel="stylesheet" href="css/no_gif.css">
     <link href="css/carga.css" rel="stylesheet" />
-	<title>Contacto SAT San Nicolás de los Garza, Nuevo León</title>
-    
-<!-- Esto es para centrar el texto -->
+    <link href="css/carga2.css" rel="stylesheet" />
+    <title>Contacto SAT San Nicolás de los Garza, Nuevo León</title>
+
+    <!-- Esto es para centrar el texto -->
     <style>
 
         h1 {
-			text-align: center;
-		}
-		p {
-			text-align: center;
-		}
-	</style>
+            text-align: right;
+        }
 
+        p {
+            text-align: right;
+        }
+
+        body, html {
+            height: 100%;
+        }
+
+        .contenedor {
+            float: left;
+            height: 100%;
+            border-radius: 9px;
+        }
+
+        .cont2 {
+            display: flex;
+            align-items: stretch;
+        }
+
+        body {
+            background-imagen: url (C:\Users\karol\OneDrive\Escritorio\PRODUCTO INTEGRADOR B\GOB-master\GOB-master\logo-nuevo-leon_800x.png) background-size: 35%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .izqizq {
+            width: 50%;
+            padding: 10px;
+            margin-top: 300px;
+        }
+
+        .mapas {
+            width: 50%;
+            margin-top: 150px;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <!-- BARRA DE BÚSQUEDA IZQUIERDA -->
     <div class="contenedor">
         <nav class="nav">
             <ul class="list">
-
                 <li class="list__item">
                     <div class="list__button">
                         <img src="assets/dashboard.svg" class="list__img">
                         <a href="INICIO.html" class="nav__link">Inicio</a>
                     </div>
                 </li>
-
                 <li class="list__item list__item--click">
                     <div class="list__button list__button--click">
                         <img src="assets/docs.svg" class="list__img">
                         <a href="#" class="nav__link">Dependencias</a>
                         <img src="assets/arrow.svg" class="list__arrow">
                     </div>
-
                     <ul class="list__show">
                         <li class="list__inside">
                             <a href="#" class="nav__link nav__link--inside">no se</a>
                         </li>
-
                         <li class="list__inside">
                             <a href="#" class="nav__link nav__link--inside">ni idea</a>
                         </li>
                     </ul>
-
                 </li>
-
-
                 <li class="list__item">
                     <div class="list__button">
                         <img src="assets/stats.svg" class="list__img">
-                        <a href="#" class="nav__link">Archivos</a>
+                        <a href="Subir_Archivo.html" class="nav__link">Archivos</a>
                     </div>
                 </li>
-
-
-
-
                 <li class="list__item">
                     <div class="list__button">
                         <img src="assets/message.svg" class="list__img">
                         <a href="CONTACTO.html" class="nav__link">Contacto</a>
                     </div>
                 </li>
-
             </ul>
         </nav>
-        <!-- FIN DEL MENU -->
     </div>
-   
-	<h1>Contacto SAT San Nicolás de los Garza, Nuevo León</h1>
-	<p>La oficina del SAT en San Nicolás de los Garza, Nuevo León se encuentra en:</p>
-	<p>Dirección: Avenida Manuel L. Barragán 325, Industrial San Nicolás, 66490 San Nicolás de los Garza, N.L.</p>
-	<p>Teléfono: 55 627 22 728</p>
-	<p>Horario de atención: Lunes a viernes de 9:00 a 17:00 horas</p>
-	<p>Sitio web: <a href="https://www.sat.gob.mx/">https://www.sat.gob.mx/</a></p>
-    
+    <!-- FIN DEL MENU -->
+
+    <div id="contenidos-paginas">
+        <div id="center3">
+            <h2>
+                <em class="encabezados t1">CONTACTO</em>
+                <em class="encabezados t2">GOBIERNO DE NUEVO LEÓN</em>
+            </h2>
+            <p class="descripcion-pagina" style="text-align: left;">Ponemos a tu disposicion los telefonos y correos electronicos de los funcionarios conforme al Gobierno de Nuevo León </p>
+            <hr>
+
+            <div id="contenido-nosotros">
+
+                <div id="izquierda">
+                    <p class="descripcion-pagina texto-contacto" style="text-align: left;">
+                        <br>
+                        Telélefono: <strong>81820201023</strong><br>
+
+                        Email: <strong><a href="gob_NuevoLeón@gmail.com" class="email-contacto">gob_NuevoLeón@gmail.com</a></strong>
+                        <br> Horario: <strong>Lunes a viernes de 8:00 a 17:00 horas</strong>
+                    </p>
+                </div>
+                <div>
+                    <!-- <div id="derecha"> -->
+                    <div class="cont2">
+                        <div class="izqizq">
+<pre style="text-align: left;font-size: 20px;">Comentarios</pre>
+                            <form action="#" method="POST">
+                                <input type="text" name="nombre" placeholder="Ingresa tu nombre" class="nombre-mensaje">
+                                <br>
+                                <input type="email" name="correo" placeholder="Ingresa tu correo" class="email-asunto">
+                                <br>
+                                <input type="text" name="asunto" placeholder="Ingresa el asunto" class="email-asunto"><br>
+
+                                <textarea name="mensaje" placeholder="Ingrese su comentario" class="nombre-mensaje"></textarea><br>
+
+                                <input type="submit" name="enviar" value="Enviar comentarios">
+                            </form>
+                        </div>
+
+                        <div id="mapa" class="mapas">
+                            <pre style="text-align: left; font-size: 20px;">         Ubicación</pre><iframe class="mapa" style="height:300px;width:400px" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14383.865517072509!2d-100.3093727!3d25.6724092!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662be2a316551c1%3A0xc0e3ee8c998b975b!2sPalacio%20de%20Gobierno%20del%20Estado%20de%20Nuevo%20Le%C3%B3n!5e0!3m2!1ses-419!2smx!4v1683156936717!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
-

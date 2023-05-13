@@ -1,4 +1,4 @@
-﻿
+
 
 
 
@@ -7,12 +7,16 @@
     max-width: 900px;
     margin: 200px 350px;
     padding: 80px;
-    background-color: #fff;
+    background-color: #fcf7b3;
     border: 1px solid #ccc;
     box-shadow: 0px 0px 10px #ccc;
-  
+    align-items: center;
+    justify-content: center;
+    background-image: url("logo-nuevo-leon_800x.png");
+    background-size: 400px;
+    background-repeat: no-repeat;
+    background-position: right;
 }
-
 
 
 h1 {
@@ -31,7 +35,7 @@ form input[type="file"] {
 }
 
 form input[type="submit"] {
-    background-color: #003A77;
+    background-color: #b55617;
     color: #fff;
     border: none;
     padding: 10px 20px;

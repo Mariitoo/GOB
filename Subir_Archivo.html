@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -7,6 +7,54 @@
     <link rel="stylesheet" href="css/no_gif.css">
     <link href="css/carga.css" rel="stylesheet" />
 
+    <style type="text/css">
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        #header{
+            margin:auto;
+            width: 500px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        ul, ol{
+            list-style: none;
+        }
+        .nav li a{
+            /* background-color: gainsboro; */
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+        .nav li a:hover{
+            background-color: goldenrod;
+        }
+        .nav > li {
+            float:left; 
+        }
+        .nav li ul {
+            display:none;
+            position: absolute;
+            min-width: 140px;
+        }
+        .nav li:hover > ul {
+            display: block;
+        }
+        .nac li ul li {
+            position: relative;
+        }
+        .nav li ul li ul{
+            right: -140px;
+            top: 0px;
+        }
+        .boton-carga{
+            height: 30px;
+            background: #AE8C52;
+            cursor: pointer;
+
+        }
+    </style>
 </head>
 
 
@@ -70,10 +118,50 @@
             <h1>Carga de archivos</h1>
             <!-- SE PUEDE USAR ESTE O EL DE ABAJO, COMO GUSTEN -->
             <form action="cargar_archivo.php" method="post" enctype="multipart/form-data">
-                <label for="archivo">Selecciona un archivo:</label>
-                <input type="file" name="archivo" id="archivo"><br>
-                <input type="submit" value="Cargar archivo">
+                <!-- <label for="archivo">Selecciona un archivo:</label> -->
+                 <label for="archivo">Selecciona un archivo:</label>
+
+                 <input type="file" name="archivo" id="archivo"> 
+                
+                  <ul class="nav">
+                         <li><a href="">Submenu</a>
+                            <ul>
+                                <li><a href="">Submenu 1</a>
+                                <ul><li><a href=""> submenu1.1</a></li>
+                                     <li><a href=""> Submenu1.2</a></li>
+                                    </ul></li>
+                              <li><a href="">Submenu 2</a></li>
+                              <li><a href="">Submenu 3</a></li>
+                              <li><a href="">Submenu 4</a></li>
+                              <li><a href="">Submenu 5</a></li>
+                              <li><a href="">Submenu 6</a></li>
+                              <li><a href="">Submenu 7</a></li>
+                              <li><a href="">Submenu 8</a></li>
+                              <li><a href="">Submenu 9</a></li>
+                              <li><a href="">Submenu 10</a></li>
+                              <li><a href="">Submenu 11</a></li>
+                              <li><a href="">Submenu 12</a></li>
+                              </ul> 
+                        </li>
+                
+            </ul>
+
+            <br>
+            <br>
+            <br>
+
+            <div>
+                <button class="boton-carga" type="submit">Cargar Archivo</button>
+            </div>
+
+
             </form>
+
+             <!-- <input class="boton-carga" type="submit" value="Cargar Archivo"></input> -->
+           
+            <!-- <div id="header"> -->
+                    
+    
             <!--<form method="post" action="cargar_archivo.php" enctype="multipart/form-data">
 	        <div class="form-group">
 		        <label for="archivo">Selecciona un archivo</label>

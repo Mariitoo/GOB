@@ -1,24 +1,62 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style2.css">
 
 </head>
+
 <body>
-  <h3>Seleccione el departamento</h3>
+    <h3>Seleccione el departamento</h3>
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Seleccionar Departamento</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#" onclick="mostrarSubDropdown('opcion1')">A. RECURSOS FINANCIEROS</a>
+            <a href="#" onclick="mostrarSubDropdown('opcion2')">B. RECURSOS HUMANOS</a>
+            <a href="#" onclick="mostrarSubDropdown('opcion3')">C. RECURSOS MATERIALES</a>
+            <a href="#" onclick="mostrarSubDropdown('opcion4')">D. OBRAS Y PROYECTOS</a>
+            <a href="#" onclick="mostrarSubDropdown('opcion5')">E. ASUNTOS JURIDICOS</a>
+            <a href="#" onclick="mostrarSubDropdown('opcion5')">F. ASUNTOS GENERALES</a>
+        </div>
+        <br> </br>
+        <div id="subDropdown" class="dropdown" style="display: none;">
+            <button class="dropbtn">Seleccionar Archivos</button>
+            <div class="dropdown-content">
+                <a href="#">Sub Opción 1</a>
+                <a href="#">Sub Opción 2</a>
+                <a href="#">Sub Opción 3</a>
+            </div>
+        </div>
+        <script>
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
 
-  <div class="dropdown">
-    <button class="dropbtn">Seleccionar</button>
-    <div class="dropdown-content">
-      <a href="#">A. RECURSOS FINANCIEROS</a>
-      <a href="#">B. RECURSOS HUMANOS</a>
-      <a href="#">C. RECURSOS MATERIALES</a>
-      <a href="#">D. OBRAS Y PROYECTOS</a>
-      <a href="#">E. ASUNTOS JURIDICOS</a>
-      <a href="#">F. ASUNTOS GENERALES</a>
+            // Cierra el dropdown si el usuario esta fuera de el
+            window.onclick = function (event) {
+                if (!event.target.matches('.dropbtn')) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            }
+            function mostrarSubDropdown(opcion) {
+                var subDropdown = document.getElementById("subDropdown");
 
-    </div>
-  </div>
+                // Mostrar el subDropdown
+                subDropdown.style.display = "block";
+
+                // Realizar acciones adicionales según la opción seleccionada
+                // Puedes personalizar el comportamiento aquí
+                console.log("Seleccionaste la opción: " + opcion);
+            }
+        </script>
 </body>
+
 </html>

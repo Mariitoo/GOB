@@ -36,3 +36,58 @@
   .dropdown a:hover {background-color: #ddd;}
   
   .show {display: block;}
+
+  /* .dropdown-right {
+    top: 0%;
+left: 260px;
+position: absolute;
+} */
+
+
+
+
+
+.sub_cont .sub {
+    max-width: 900px;
+    margin: 200px 350px;
+    padding: 80px;
+    background-color: #fcf7b3;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 10px #ccc;
+    align-items: center;
+    justify-content: center;
+    background-image: url("Logo_de_la_Secretaría_de_Seguridad_de_Nuevo_Leon_\(2021\).svg.png");
+    background-size: 250px;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+
+h1 {
+    font-size: 36px;
+    margin: 0 0 20px 0;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input[type="file"] {
+    display: block;
+    margin-bottom: 20px;
+}
+
+form input[type="submit"] {
+    background-color: #031a45;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    form input[type="submit"]:hover {
+        background-color: #003A77;
+        opacity: 0.8;
+    }

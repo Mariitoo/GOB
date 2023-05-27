@@ -2,6 +2,195 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <title>Reportes</title>
+    <link rel="stylesheet" href="css/no_gif.css">
+    <link rel="stylesheet" href="style2.css"/>
+
+</head>
+
+
+
+<body background="1200px-Palacio_de_Gobierno_de_Nuevo_Leon.jpg"
+    style="background-repeat: no-repeat; background-position: right; background-size:cover;">
+    <div class="contenedor">
+        <nav class="nav">
+            <ul class="list">
+
+                <li class="list__item">
+                    <div class="list__button">
+                        <img src="assets/dashboard.svg" class="list__img">
+                        <a href="INICIO.html" class="nav__link">Inicio</a>
+                    </div>
+                </li>
+
+                <li class="list__item list__item--click">
+                    <div class="list__button list__button--click">
+                        <img src="assets/docs.svg" class="list__img">
+                        <a href="#" class="nav__link">Dependencias</a>
+                        <img src="assets/arrow.svg" class="list__arrow">
+                    </div>
+
+                </li>
+
+
+                <li class="list__item">
+                    <div class="list__button">
+                        <img src="assets/stats.svg" class="list__img">
+                        <a href="#" class="nav__link">Archivos</a>
+                    </div>
+                </li>
+
+                <li class="list__item">
+                    <div class="list__button">
+                        <img src="assets/message.svg" class="list__img">
+                        <a href="#" class="nav__link">Contacto</a>
+                    </div>
+                </li>
+
+                <li class="list__item">
+                    <div class="list__button">
+                        <img src="assets/message.svg" class="list__img">
+                        <a href="#" class="nav__link">Reportes</a>
+                    </div>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+
+    <div class="sub_cont">
+        <div class="sub">
+            <center>
+                <h1>Reportes</h1>
+            </center>
+
+            <!--Aqui abajo insertan las listas desplegables, ahorita tiene la funcion con php de cargar archivo, solo agregan lo de uds -->
+            <!--están ambos botones para las dos listas-->
+            <form action="cargar_archivo.php" method="post" enctype="multipart/form-data">
+                <label for="archivo">Seleccione el departamento:</label>
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Seleccionar </button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#" onclick="mostrarSubDropdown('opcion1')">A. RECURSOS FINANCIEROS</a>
+                        <a href="#" onclick="mostrarSubDropdown('opcion2')">B. RECURSOS HUMANOS</a>
+                        <a href="#" onclick="mostrarSubDropdown('opcion3')">C. RECURSOS MATERIALES</a>
+                        <a href="#" onclick="mostrarSubDropdown('opcion4')">D. OBRAS Y PROYECTOS</a>
+                        <a href="#" onclick="mostrarSubDropdown('opcion5')">E. ASUNTOS JURIDICOS</a>
+                        <a href="#" onclick="mostrarSubDropdown('opcion6')">F. ASUNTOS GENERALES</a>
+                    </div>
+                </div>
+                <br><br>
+                <input type="file" name="archivo" id="archivo"><br>
+                <input type="submit" value="Cargar archivo">
+            </form>
+            <br>
+            <form action="cargar_archivo.php" method="post" enctype="multipart/form-data">
+                <label for="archivo">Seleccione el documento</label>
+                <div class="dropdown dropdown-right">
+                    <button onclick="mySubDropdownFunction()" class="dropbtn">Seleccionar</button>
+                    <div id="subDropdown" class="dropdown-content">
+                    </div>
+                </div>
+                <br><br>
+                <input type="file" name="archivo" id="archivo"><br>
+                <input type="submit" value="Cargar archivo">
+            </form>
+            <br>
+            <a href="ruta_del_archivo" download>
+                <button>Descargar</button>
+            </a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        var subDropdownOptions = ""; // Variable para almacenar las opciones seleccionadas del subdropdown
+
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+            document.getElementById("subDropdown").classList.remove("show"); // Ocultar el subdropdown al cambiar de departamento
+        }
+
+        function mySubDropdownFunction() {
+            document.getElementById("subDropdown").classList.toggle("show");
+
+            if (subDropdownOptions !== "") {
+                document.getElementById("subDropdown").innerHTML = subDropdownOptions;
+            }
+        }
+
+        // Cierra los dropdown si el usuario hace clic fuera de ellos
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        function mostrarSubDropdown(opcion) {
+            var subDropdown = document.getElementById("subDropdown");
+
+            // Limpiar opciones existentes
+            subDropdown.innerHTML = "";
+
+            // Mostrar el subDropdown
+            subDropdown.style.display = "block";
+
+            // Agregar opciones según la opción seleccionada
+            switch (opcion) {
+                case 'opcion1':
+                    subDropdown.innerHTML += '<a href="#">Sub Opción 1.1</a>';
+                    subDropdown.innerHTML += '<a href="#">Sub Opción 1.2</a>';
+                    break;
+                case 'opcion2':
+                    subDropdown.innerHTML += '<a href="#">Sub Opción 2.1</a>';
+                    subDropdown.innerHTML += '<a href="#">Sub Opción 2.2</a>';
+                    break;
+                case 'opcion3':
+                    subDropdown.innerHTML += '<a href="#">Sub Opción 3.1</a>';
+                    subDropdown.innerHTML += '<a href="#">Sub Opción 3.2</a>';
+                    subDropdown.innerHTML += '<a href="#">Sub Opción 3.3</a>';
+                    break;
+                case 'opcion4':
+                    subDropdown.innerHTML += '<a href="#">Sub Opción 4.1</a>';
+                    break;
+                case 'opcion5':
+                    subDropdown.innerHTML += '<a href="#">Sub Opción 5.1</a>';
+                    subDropdown.innerHTML += '<a href="#">Sub Opción 5.2</a>';
+                    subDropdown.innerHTML += '<a href="#">Sub Opción 5.3</a>';
+                    break;
+                case 'opcion6':
+                    subDropdown.innerHTML += '<a href="#">Sub Opción 6.1</a>';
+                    subDropdown.innerHTML += '<a href="#">Sub Opción 6.2</a>';
+                    subDropdown.innerHTML += '<a href="#">Sub Opción 6.3</a>';
+                    subDropdown.innerHTML += '<a href="#">Sub Opción 6.4</a>';
+                    break;
+                default:
+                    break;
+            }
+
+            // Almacenar las opciones seleccionadas en la variable
+            subDropdownOptions = subDropdown.innerHTML;
+
+            // Realizar acciones adicionales según la opción seleccionada
+            console.log("Seleccionaste la opción: " + opcion);
+        }
+    </script>
+
+
+</body>
+
+</html>
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style2.css">
 
@@ -10,53 +199,105 @@
 <body>
     <h3>Seleccione el departamento</h3>
     <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Seleccionar Departamento</button>
-        <div id="myDropdown" class="dropdown-content">
-            <a href="#" onclick="mostrarSubDropdown('opcion1')">A. RECURSOS FINANCIEROS</a>
-            <a href="#" onclick="mostrarSubDropdown('opcion2')">B. RECURSOS HUMANOS</a>
-            <a href="#" onclick="mostrarSubDropdown('opcion3')">C. RECURSOS MATERIALES</a>
-            <a href="#" onclick="mostrarSubDropdown('opcion4')">D. OBRAS Y PROYECTOS</a>
-            <a href="#" onclick="mostrarSubDropdown('opcion5')">E. ASUNTOS JURIDICOS</a>
-            <a href="#" onclick="mostrarSubDropdown('opcion5')">F. ASUNTOS GENERALES</a>
-        </div>
-        <br> </br>
-        <div id="subDropdown" class="dropdown" style="display: none;">
-            <button class="dropbtn">Seleccionar Archivos</button>
-            <div class="dropdown-content">
-                <a href="#">Sub Opción 1</a>
-                <a href="#">Sub Opción 2</a>
-                <a href="#">Sub Opción 3</a>
-            </div>
-        </div>
-        <script>
-            function myFunction() {
-                document.getElementById("myDropdown").classList.toggle("show");
+      <button onclick="myFunction()" class="dropbtn">Seleccionar </button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#" onclick="mostrarSubDropdown('opcion1')">A. RECURSOS FINANCIEROS</a>
+        <a href="#" onclick="mostrarSubDropdown('opcion2')">B. RECURSOS HUMANOS</a>
+        <a href="#" onclick="mostrarSubDropdown('opcion3')">C. RECURSOS MATERIALES</a>
+        <a href="#" onclick="mostrarSubDropdown('opcion4')">D. OBRAS Y PROYECTOS</a>
+        <a href="#" onclick="mostrarSubDropdown('opcion5')">E. ASUNTOS JURIDICOS</a>
+        <a href="#" onclick="mostrarSubDropdown('opcion6')">F. ASUNTOS GENERALES</a>
+      </div>
+    </div>
+  
+    <br>
+  
+    <h3>Seleccionar Documento</h3>
+    <div class="dropdownm">
+      <button onclick="mySubDropdownFunction()" class="dropbtn">Seleccionar</button>
+      <div id="subDropdown" class="dropdown-content">
+      </div>
+    </div>
+  
+    <script>
+      var subDropdownOptions = ""; // Variable para almacenar las opciones seleccionadas del subdropdown
+  
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+        document.getElementById("subDropdown").classList.remove("show"); // Ocultar el subdropdown al cambiar de departamento
+      }
+  
+      function mySubDropdownFunction() {
+        document.getElementById("subDropdown").classList.toggle("show");
+  
+        if (subDropdownOptions !== "") {
+          document.getElementById("subDropdown").innerHTML = subDropdownOptions;
+        }
+      }
+  
+      // Cierra los dropdown si el usuario hace clic fuera de ellos
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
             }
+          }
+        }
+      }
+  
+      function mostrarSubDropdown(opcion) {
+        var subDropdown = document.getElementById("subDropdown");
+  
+        // Limpiar opciones existentes
+        subDropdown.innerHTML = "";
+  
+        // Mostrar el subDropdown
+        subDropdown.style.display = "block";
+  
+        // Agregar opciones según la opción seleccionada
+        switch (opcion) {
+          case 'opcion1':
+            subDropdown.innerHTML += '<a href="#">Sub Opción 1.1</a>';
+            subDropdown.innerHTML += '<a href="#">Sub Opción 1.2</a>';
+            break;
+          case 'opcion2':
+            subDropdown.innerHTML += '<a href="#">Sub Opción 2.1</a>';
+            subDropdown.innerHTML += '<a href="#">Sub Opción 2.2</a>';
+            break;
+          case 'opcion3':
+            subDropdown.innerHTML += '<a href="#">Sub Opción 3.1</a>';
+            subDropdown.innerHTML += '<a href="#">Sub Opción 3.2</a>';
+            subDropdown.innerHTML += '<a href="#">Sub Opción 3.3</a>';
+            break;
+          case 'opcion4':
+            subDropdown.innerHTML += '<a href="#">Sub Opción 4.1</a>';
+            break;
+          case 'opcion5':
+            subDropdown.innerHTML += '<a href="#">Sub Opción 5.1</a>';
+            subDropdown.innerHTML += '<a href="#">Sub Opción 5.2</a>';
+            subDropdown.innerHTML += '<a href="#">Sub Opción 5.3</a>';
+            break;
+          case 'opcion6':
+            subDropdown.innerHTML += '<a href="#">Sub Opción 6.1</a>';
+            subDropdown.innerHTML += '<a href="#">Sub Opción 6.2</a>';
+            subDropdown.innerHTML += '<a href="#">Sub Opción 6.3</a>';
+            subDropdown.innerHTML += '<a href="#">Sub Opción 6.4</a>';
+            break;
+          default:
+            break;
+        }
+  
+        // Almacenar las opciones seleccionadas en la variable
+        subDropdownOptions = subDropdown.innerHTML;
+  
+        // Realizar acciones adicionales según la opción seleccionada
+        console.log("Seleccionaste la opción: " + opcion);
+      }
+    </script>
 
-            // Cierra el dropdown si el usuario esta fuera de el
-            window.onclick = function (event) {
-                if (!event.target.matches('.dropbtn')) {
-                    var dropdowns = document.getElementsByClassName("dropdown-content");
-                    var i;
-                    for (i = 0; i < dropdowns.length; i++) {
-                        var openDropdown = dropdowns[i];
-                        if (openDropdown.classList.contains('show')) {
-                            openDropdown.classList.remove('show');
-                        }
-                    }
-                }
-            }
-            function mostrarSubDropdown(opcion) {
-                var subDropdown = document.getElementById("subDropdown");
-
-                // Mostrar el subDropdown
-                subDropdown.style.display = "block";
-
-                // Realizar acciones adicionales según la opción seleccionada
-                // Puedes personalizar el comportamiento aquí
-                console.log("Seleccionaste la opción: " + opcion);
-            }
-        </script>
 </body>
 
-</html>
+</html> -->
